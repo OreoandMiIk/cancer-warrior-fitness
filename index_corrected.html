@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07110b">
+<title>Cancer Warrior Fitness | Coach Arun Rosiah</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+ --accent:#72ff16; --accent2:#19c943; --rgb:114,255,22;
+ --bg:#050b07; --bg2:#0a1710; --text:#f7fff8; --muted:#b9c7bd;
+ --line:rgba(255,255,255,.13); --panel:rgba(255,255,255,.055);
+}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+button,a{font:inherit}.shell{width:min(1440px,100%);margin:auto}
+header{height:86px;position:fixed;z-index:50;top:0;left:0;right:0;background:rgba(4,11,7,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+nav{height:100%;display:flex;align-items:center;padding:0 4vw;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;margin-right:auto;text-decoration:none;color:white}
+.logoBox{width:59px;height:59px;background:white;border-radius:13px;display:grid;place-items:center;overflow:hidden}
+.logoBox img{width:55px;height:55px;object-fit:contain}
+.brand b{font-size:19px;letter-spacing:.06em}.brand small{display:block;color:var(--muted);font-size:11px;letter-spacing:.15em;margin-top:3px}
+.links{display:flex;gap:24px}.links a{color:#dfe8e1;text-decoration:none;font-size:14px;font-weight:700}.links a:hover{color:var(--accent)}
+.themes{display:flex;gap:8px;padding-left:5px}.dot{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,.35);cursor:pointer;box-shadow:inset 0 0 0 5px rgba(0,0,0,.35)}.dot.active{outline:2px solid white;outline-offset:3px}
+.cta{background:var(--accent);color:#061008!important;padding:12px 19px;border-radius:999px;text-decoration:none;font-weight:900;box-shadow:0 0 28px rgba(var(--rgb),.20)}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;padding-top:86px;background:
+ radial-gradient(circle at 18% 60%,rgba(var(--rgb),.13),transparent 32%),
+ linear-gradient(110deg,#061009 0%,#07120c 47%,#09130e 100%)}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:50px 50px;mask-image:linear-gradient(to right,black,transparent)}
+.hero:after{content:"";position:absolute;width:650px;height:650px;border:1px solid rgba(var(--rgb),.13);border-radius:50%;right:-160px;top:90px;box-shadow:0 0 0 70px rgba(var(--rgb),.025),0 0 0 140px rgba(var(--rgb),.018)}
+.heroInner{width:100%;padding:7vh 5vw 5vh;display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:20px;position:relative;z-index:2}
+.eyebrow{color:var(--accent);font-weight:900;letter-spacing:.2em;font-size:13px;margin-bottom:20px}
+h1{font-size:clamp(70px,8.2vw,142px);line-height:.79;letter-spacing:-.07em;font-weight:1000;max-width:850px}
+h1 .accent{color:var(--accent);text-shadow:0 0 40px rgba(var(--rgb),.2)}
+.lead{font-size:clamp(17px,1.35vw,22px);line-height:1.7;color:#c9d4cc;max-width:680px;margin:31px 0}
+.actions{display:flex;gap:14px;flex-wrap:wrap}.btn{padding:16px 24px;border-radius:999px;font-weight:900;text-decoration:none;display:inline-block}.primary{background:var(--accent);color:#061008}.secondary{border:1px solid rgba(255,255,255,.3);color:white;background:rgba(255,255,255,.05)}
+.photoWrap{height:min(80vh,830px);position:relative;align-self:end;display:flex;align-items:flex-end;justify-content:center}
+.photoWrap:before{content:"";position:absolute;width:75%;aspect-ratio:1;border-radius:50%;background:var(--accent);filter:blur(95px);opacity:.13;bottom:7%}
+.photoWrap img{position:relative;z-index:2;height:100%;max-width:100%;object-fit:contain;object-position:bottom center;filter:drop-shadow(0 25px 35px rgba(0,0,0,.5))}
+.heroLogo{position:absolute;right:3vw;top:14%;width:180px;opacity:.09;filter:invert(1)}
+.stats{position:absolute;bottom:25px;left:5vw;right:5vw;z-index:3;display:flex;gap:38px;color:#d8e2da;font-size:12px;letter-spacing:.1em;text-transform:uppercase}.stats strong{display:block;color:var(--accent);font-size:18px;letter-spacing:0;margin-bottom:3px}
+section{padding:110px 5vw;border-top:1px solid var(--line);position:relative}
+.sectionTag{color:var(--accent);letter-spacing:.18em;text-transform:uppercase;font-size:12px;font-weight:900;margin-bottom:14px}
+h2{font-size:clamp(42px,5vw,78px);letter-spacing:-.05em;line-height:.98;max-width:950px}
+.sub{color:var(--muted);font-size:18px;line-height:1.75;max-width:760px;margin-top:24px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:55px}.card{background:var(--panel);border:1px solid var(--line);padding:34px;border-radius:22px;min-height:220px;transition:.25s}.card:hover{transform:translateY(-5px);border-color:rgba(var(--rgb),.6);box-shadow:0 20px 60px rgba(0,0,0,.25)}.num{font-size:12px;color:var(--accent);font-weight:900}.card h3{font-size:25px;margin:28px 0 13px}.card p{color:var(--muted);line-height:1.65}
+.story{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}.storyPic{border-radius:26px;overflow:hidden;min-height:620px;position:relative;background:#101914}.storyPic img{width:100%;height:100%;position:absolute;object-fit:cover;object-position:center 20%;filter:saturate(.88)}.storyPic:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,11,7,.65),transparent 50%);border:1px solid rgba(var(--rgb),.25);border-radius:26px}
+.quote{font-size:clamp(30px,3vw,48px);line-height:1.14;margin:30px 0;color:white}.quote em{font-style:normal;color:var(--accent)}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}.badge{border:1px solid rgba(var(--rgb),.38);background:rgba(var(--rgb),.07);padding:10px 14px;border-radius:999px;font-size:13px}
+.mediaRow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:45px}.media{padding:25px;border:1px solid var(--line);border-radius:18px;text-align:center;font-weight:900;color:#dfe7e1;background:rgba(255,255,255,.03)}
+.contact{background:radial-gradient(circle at 80% 50%,rgba(var(--rgb),.18),transparent 34%),#07100a}.contact h2{max-width:1000px}.contactBox{margin-top:45px;display:flex;align-items:center;justify-content:space-between;gap:30px;border:1px solid rgba(var(--rgb),.28);padding:28px;border-radius:24px;background:rgba(var(--rgb),.045)}.details{line-height:1.9;color:#d5dfd7}.details b{color:white}
+footer{padding:32px 5vw;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#829087;font-size:12px}
+@media(max-width:900px){
+ header{height:74px}.links{display:none}.brand small{display:none}.brand b{font-size:14px}.logoBox{width:48px;height:48px}.logoBox img{width:44px;height:44px}.themes .dot:nth-child(n+5){display:none}
+ .hero{padding-top:74px;min-height:auto}.heroInner{grid-template-columns:1fr;padding:65px 6vw 0}.heroText{z-index:5}.hero h1{font-size:clamp(62px,19vw,105px)}.lead{font-size:16px;margin:23px 0}.photoWrap{height:520px;margin-top:-25px}.photoWrap img{max-width:115%;}.heroLogo{display:none}.stats{position:relative;left:auto;right:auto;bottom:auto;padding:25px 6vw;flex-wrap:wrap;background:#050b07}
+ .cards,.mediaRow{grid-template-columns:1fr}.story{grid-template-columns:1fr}.storyPic{min-height:520px}.contactBox{align-items:flex-start;flex-direction:column}section{padding:80px 6vw}
+}
+</style>
+
+<style>
+:root{
+ --bg:#f4eedf !important;
+ --bg2:#eee5d2 !important;
+ --text:#111711 !important;
+ --muted:#596259 !important;
+ --line:rgba(21,55,28,.15) !important;
+ --panel:rgba(255,255,255,.46) !important;
+}
+body{background:#f4eedf !important;color:#111711 !important}
+header{background:rgba(247,241,226,.91) !important;border-bottom:1px solid rgba(21,55,28,.14) !important}
+.brand{color:#111711 !important}.brand small{color:#657066 !important}
+.links a{color:#202820 !important}.links a:hover{color:var(--accent2)!important}
+.logoBox{background:#fffaf0 !important;border:1px solid rgba(20,80,32,.12)!important}
+.cta{color:white!important;background:linear-gradient(135deg,var(--accent2),#087c22)!important}
+.hero{
+ background:
+ radial-gradient(circle at 20% 56%,rgba(var(--rgb),.09),transparent 34%),
+ linear-gradient(110deg,#f8f1e3 0%,#f3ecdd 53%,#eee4d0 100%) !important;
+}
+.hero:before{background-image:linear-gradient(rgba(30,80,40,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(30,80,40,.035) 1px,transparent 1px)!important}
+.hero:after{border-color:rgba(var(--rgb),.18)!important;box-shadow:0 0 0 70px rgba(var(--rgb),.03),0 0 0 140px rgba(var(--rgb),.018)!important}
+h1{color:#101510!important}
+.lead{color:#485248!important}
+.secondary{border-color:rgba(18,50,24,.25)!important;color:#172017!important;background:rgba(255,255,255,.36)!important}
+.stats{color:#334033!important}
+section{border-top-color:rgba(21,55,28,.13)!important}
+.sub,.card p{color:#596259!important}
+.card{background:rgba(255,255,255,.46)!important;border-color:rgba(21,55,28,.13)!important;box-shadow:0 14px 45px rgba(62,50,28,.035)}
+.quote{color:#172017!important}
+.badge{color:#172017!important;background:rgba(var(--rgb),.06)!important}
+.media{color:#172017!important;background:rgba(255,255,255,.4)!important;border-color:rgba(21,55,28,.13)!important}
+.contact{background:radial-gradient(circle at 80% 50%,rgba(var(--rgb),.12),transparent 34%),#efe6d5!important}
+.details{color:#485248!important}.details b{color:#111711!important}
+footer{background:#e9dfcb!important;color:#596259!important;border-top-color:rgba(21,55,28,.13)!important}
+.heroLogo{opacity:1!important;filter:none!important;width:min(31vw,460px)!important;right:5vw!important;top:20%!important;z-index:1!important}
+.photoWrap{z-index:3!important}
+.photoWrap img{filter:drop-shadow(0 24px 28px rgba(37,34,23,.22))!important}
+@media(max-width:900px){
+ .stats{background:#f4eedf!important}
+ .heroLogo{opacity:.09!important;width:330px!important;right:-80px!important;top:18%!important}
+}
+</style>
+
+
+<style id="white-redesign">
+:root{
+ --accent:#2f8f3a !important;
+ --accent2:#176b2b !important;
+ --rgb:47,143,58 !important;
+ --bg:#ffffff !important;
+ --bg2:#f7faf7 !important;
+ --text:#111611 !important;
+ --muted:#5e675f !important;
+ --line:rgba(23,107,43,.14) !important;
+ --panel:#f8faf8 !important;
+}
+html,body{background:#fff!important;color:#111611!important}
+header{background:rgba(255,255,255,.94)!important;border-bottom:1px solid #e4e9e4!important}
+.logoBox{background:transparent!important;border:0!important;width:68px!important;height:68px!important}
+.logoBox img{width:66px!important;height:66px!important;object-fit:contain!important}
+.brand{color:#111611!important}.brand small{color:#667067!important}
+.links a{color:#252c26!important}.links a:hover{color:#176b2b!important}
+.cta,.primary{background:#176b2b!important;color:#fff!important;box-shadow:0 10px 25px rgba(23,107,43,.15)!important}
+.hero{
+ background:
+ radial-gradient(circle at 78% 44%,rgba(47,143,58,.07),transparent 25%),
+ linear-gradient(105deg,#fff 0%,#fff 60%,#f8fbf8 100%)!important;
+}
+.hero:before{background-image:linear-gradient(rgba(23,107,43,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(23,107,43,.022) 1px,transparent 1px)!important}
+.hero:after{border-color:rgba(47,143,58,.10)!important;box-shadow:0 0 0 70px rgba(47,143,58,.018),0 0 0 140px rgba(47,143,58,.01)!important}
+.eyebrow,.sectionTag,.num{color:#237c33!important}
+h1,h2{color:#111611!important}
+h1 .accent{color:#2f8f3a!important;text-shadow:none!important}
+.lead,.sub,.card p{color:#343a35!important}
+.secondary{color:#1c261e!important;border:1px solid #cbd5cc!important;background:#fff!important}
+.photoWrap{height:min(82vh,850px)!important}
+.photoWrap:before{background:#2f8f3a!important;opacity:.055!important;filter:blur(110px)!important}
+.photoWrap img{height:100%!important;width:auto!important;object-fit:contain!important;object-position:bottom center!important;filter:drop-shadow(0 22px 28px rgba(0,0,0,.12))!important}
+.heroLogo{display:block!important;opacity:.10!important;filter:none!important;width:min(28vw,420px)!important;right:2.5vw!important;top:19%!important;z-index:1!important}
+.stats{color:#334036!important}.stats strong{color:#237c33!important}
+section{background:#fff!important;border-top:1px solid #edf0ed!important}
+.card{background:#f8faf8!important;border-color:#e3e9e4!important;box-shadow:none!important}
+.card:hover{border-color:rgba(47,143,58,.42)!important;box-shadow:0 18px 40px rgba(25,70,35,.07)!important}
+.storyPic{background:#f7faf7!important}
+.storyPic img{object-fit:contain!important;object-position:center bottom!important;filter:none!important}
+.storyPic:after{background:none!important;border-color:#e3e9e4!important}
+.quote{color:#182019!important}.quote em{color:#237c33!important}
+.badge{color:#1c261e!important;background:#f4faf5!important;border-color:rgba(47,143,58,.25)!important}
+.media{color:#172019!important;background:#fafcfa!important;border-color:#e3e9e4!important}
+.contact{background:#f7faf7!important}
+.contactBox{background:#fff!important;border-color:#dce7de!important}
+.details{color:#343a35!important}.details b{color:#111611!important}
+footer{background:#fff!important;color:#6a736b!important;border-top:1px solid #e5eae5!important}
+.dot{box-shadow:inset 0 0 0 5px rgba(255,255,255,.5)!important}
+@media(max-width:900px){
+ .stats{background:#fff!important}
+ .heroLogo{opacity:.055!important;right:-90px!important}
+ .photoWrap{height:500px!important}
+}
+</style>
+
+
+<style id="new-arun-fit">
+.photoWrap{overflow:visible!important}
+.photoWrap img{height:auto!important;width:min(48vw,760px)!important;max-height:82vh!important;object-fit:contain!important;object-position:center bottom!important}
+.storyPic img{object-fit:contain!important;object-position:center bottom!important}
+@media(max-width:900px){.photoWrap img{width:min(94vw,650px)!important;max-height:500px!important}}
+</style>
+
+
+<style id="final-theme-system">
+:root{--accent:#2f8f3a;--accent2:#176b2b;--rgb:47,143,58}
+.themes{display:flex!important;gap:8px!important;align-items:center!important;position:relative!important;z-index:999!important;pointer-events:auto!important}
+.dot{
+ width:27px!important;height:27px!important;min-width:27px!important;border-radius:50%!important;
+ border:2px solid rgba(0,0,0,.12)!important;background:var(--swatch)!important;
+ padding:0!important;cursor:pointer!important;pointer-events:auto!important;
+ box-shadow:inset 0 0 0 4px rgba(255,255,255,.35)!important;transition:.18s!important
+}
+.dot:hover{transform:scale(1.14)!important}
+.dot.active{outline:2px solid var(--accent)!important;outline-offset:3px!important}
+
+/* Every branded accent below follows the selected colour */
+.eyebrow,.sectionTag,.num,.stats strong{color:var(--accent)!important}
+h1 .accent,.quote em{color:var(--accent)!important;text-shadow:none!important}
+.links a:hover,.media:hover{color:var(--accent2)!important}
+.cta,.primary{
+ background:var(--accent2)!important;color:#fff!important;
+ box-shadow:0 10px 25px rgba(var(--rgb),.17)!important
+}
+.hero{
+ background:
+ radial-gradient(circle at 78% 44%,rgba(var(--rgb),.075),transparent 25%),
+ linear-gradient(105deg,#fff 0%,#fff 60%,rgba(var(--rgb),.025) 100%)!important
+}
+.hero:after{border-color:rgba(var(--rgb),.13)!important;box-shadow:0 0 0 70px rgba(var(--rgb),.022),0 0 0 140px rgba(var(--rgb),.012)!important}
+.photoWrap:before{background:var(--accent)!important}
+.card:hover,.media:hover{border-color:rgba(var(--rgb),.48)!important}
+.badge{border-color:rgba(var(--rgb),.28)!important;background:rgba(var(--rgb),.045)!important}
+.contact{background:radial-gradient(circle at 80% 50%,rgba(var(--rgb),.09),transparent 34%),#f8faf8!important}
+.contactBox{border-color:rgba(var(--rgb),.20)!important}
+.media{text-decoration:none!important}
+.storyPic img{object-fit:contain!important;object-position:center bottom!important}
+@media(max-width:1180px){.themes{gap:6px!important}.dot{width:23px!important;height:23px!important;min-width:23px!important}}
+</style>
+
+
+<style id="instagram-icon-style">
+.instagram-icon{display:inline-flex;vertical-align:-3px;margin-right:3px;color:var(--accent2)}
+.instagram-icon svg{display:block}
+</style>
+
+
+<style id="layout-refinements">
+/* Header/nav refinement */
+nav{gap:20px!important}
+.links{gap:27px!important;align-items:center!important}
+.links a{white-space:nowrap!important}
+.links a:nth-child(3){margin-right:-8px!important}
+.links a:nth-child(4){margin-left:-8px!important}
+.brand{margin-right:auto!important}
+
+/* Hero alignment + spacing */
+.heroInner{align-items:start!important;padding-top:8.5vh!important}
+.heroText{padding-top:10px!important}
+.eyebrow{margin-bottom:25px!important}
+.lead{margin-top:35px!important;margin-bottom:38px!important}
+.actions{gap:18px!important}
+.photoWrap{align-self:start!important;margin-top:-15px!important}
+
+/* ARUN framework */
+.arun-framework{
+ display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));
+ gap:14px;margin-top:42px;max-width:850px
+}
+.arun-framework div{
+ display:flex;align-items:center;gap:11px;
+ padding:18px 20px;border:1px solid rgba(var(--rgb),.20);
+ border-radius:16px;background:rgba(var(--rgb),.035)
+}
+.arun-framework strong{font-size:25px;color:var(--accent);line-height:1}
+.arun-framework span{font-size:17px;font-weight:800;color:#1d241e}
+
+/* ACE credential artwork */
+.ace-badge{display:inline-flex!important;align-items:center!important;gap:9px!important;padding:7px 14px 7px 8px!important}
+.ace-badge img{width:43px;height:43px;object-fit:contain;flex:0 0 auto}
+.ace-badge span{white-space:nowrap}
+
+/* slightly more breathing room in main sections */
+.cards{gap:20px!important}
+.story{gap:82px!important}
+.mediaRow{gap:16px!important}
+
+@media(max-width:1100px){
+ .links{gap:18px!important}
+ .links a:nth-child(3),.links a:nth-child(4){margin:0!important}
+ .arun-framework{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+ .heroInner{padding-top:60px!important}
+ .photoWrap{margin-top:5px!important}
+ .arun-framework{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+ .arun-framework{grid-template-columns:1fr}
+}
+</style>
+
+<style id="content-update-styles">.services-three{grid-template-columns:repeat(3,1fr)!important}.impact-strip{width:100%;padding:27px 5vw;display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap;border-top:1px solid rgba(var(--rgb),.14);border-bottom:1px solid rgba(var(--rgb),.14);background:rgba(var(--rgb),.045);color:#151b16;font-weight:950;letter-spacing:.11em;font-size:14px}.impact-strip span{color:var(--accent2)}.impact-strip i{font-style:normal;color:#8a938b}.moment-line{margin-top:28px;font-size:clamp(22px,2vw,31px);line-height:1.35;color:#151b16;font-weight:800}.moment-line strong{color:var(--accent2)}@media(max-width:900px){.services-three{grid-template-columns:1fr!important}.impact-strip{gap:10px;font-size:12px;text-align:center}.impact-strip i{display:none}.impact-strip span{width:100%}}</style>
+
+<style id="iphone-mobile-fix">
+/* Phone-specific layout. Desktop remains unchanged. */
+@media (max-width:700px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden!important}
+  .shell{width:100%!important;max-width:100%!important}
+
+  header{height:auto!important;min-height:68px!important}
+  nav.shell{
+    min-height:68px!important;height:auto!important;
+    padding:8px 14px!important;gap:8px!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) auto!important;
+    grid-template-areas:"brand cta" "themes themes"!important;
+    align-items:center!important;
+  }
+  .brand{grid-area:brand!important;min-width:0!important;gap:8px!important}
+  .logoBox{width:42px!important;height:42px!important;min-width:42px!important}
+  .logoBox img{width:40px!important;height:40px!important}
+  .brand b{
+    display:block!important;font-size:12px!important;line-height:1.12!important;
+    letter-spacing:.09em!important;max-width:128px!important;white-space:normal!important
+  }
+  .brand small,.links{display:none!important}
+  .themes{
+    grid-area:themes!important;display:flex!important;justify-content:center!important;
+    gap:10px!important;padding:3px 0 2px!important
+  }
+  .themes .dot{
+    display:block!important;width:20px!important;height:20px!important;min-width:20px!important;
+    outline-offset:2px!important
+  }
+  .cta{
+    grid-area:cta!important;position:static!important;
+    width:auto!important;height:auto!important;min-width:0!important;
+    padding:10px 12px!important;border-radius:999px!important;
+    font-size:11px!important;line-height:1.1!important;white-space:nowrap!important
+  }
+
+  .hero{
+    padding-top:102px!important;min-height:auto!important;
+    overflow:hidden!important
+  }
+  .heroInner{
+    display:flex!important;flex-direction:column!important;
+    width:100%!important;padding:42px 20px 0!important;gap:0!important;
+    align-items:stretch!important
+  }
+  .heroText{width:100%!important;max-width:100%!important;padding:0!important}
+  .eyebrow{
+    font-size:10.5px!important;line-height:1.55!important;letter-spacing:.16em!important;
+    margin:0 0 20px!important;max-width:100%!important
+  }
+  .hero h1{
+    width:100%!important;max-width:100%!important;
+    font-size:clamp(54px,16.5vw,72px)!important;
+    line-height:.86!important;letter-spacing:-.065em!important;
+    overflow:visible!important;word-break:normal!important
+  }
+  .lead{
+    width:100%!important;max-width:100%!important;
+    font-size:15px!important;line-height:1.62!important;
+    margin:25px 0 25px!important
+  }
+  .actions{
+    display:grid!important;grid-template-columns:1fr 1fr!important;
+    gap:10px!important;width:100%!important
+  }
+  .actions .btn{
+    width:100%!important;padding:14px 10px!important;
+    font-size:12px!important;text-align:center!important;white-space:nowrap!important
+  }
+  .photoWrap{
+    width:100%!important;height:390px!important;
+    margin:24px 0 0!important;align-self:center!important;
+    overflow:visible!important
+  }
+  .photoWrap img{
+    width:100%!important;max-width:100%!important;height:100%!important;
+    object-fit:contain!important;object-position:center bottom!important
+  }
+  .heroLogo{display:none!important}
+  .stats{
+    position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;
+    width:100%!important;padding:22px 20px 26px!important;
+    display:grid!important;grid-template-columns:1fr 1fr!important;
+    gap:18px!important;background:#fff!important;color:#343a35!important
+  }
+  .stats span:last-child{grid-column:1/-1!important}
+  .stats strong{font-size:16px!important}
+
+  section{padding:65px 20px!important;overflow:hidden!important}
+  h2{font-size:clamp(38px,12vw,54px)!important;line-height:.96!important}
+  .sub{font-size:16px!important;line-height:1.65!important}
+  .cards,.services-three,.mediaRow,.story{grid-template-columns:1fr!important}
+  .cards{gap:14px!important;margin-top:34px!important}
+  .card{min-height:0!important;padding:25px!important}
+  .story{gap:34px!important}
+  .storyPic{min-height:410px!important}
+  .arun-framework{grid-template-columns:1fr 1fr!important;gap:9px!important}
+  .arun-framework div{padding:13px 12px!important;gap:8px!important}
+  .arun-framework strong{font-size:21px!important}
+  .arun-framework span{font-size:14px!important}
+  .badges{gap:8px!important}
+  .badge{max-width:100%!important}
+  .ace-badge span{white-space:normal!important}
+  .mediaRow{gap:10px!important}
+  .contactBox{flex-direction:column!important;align-items:stretch!important;padding:22px!important}
+  .contactBox .btn{text-align:center!important}
+  .impact-strip{padding:24px 20px!important}
+  footer{
+    padding:25px 20px!important;gap:12px!important;
+    flex-direction:column!important;text-align:center!important
+  }
+}
+@media (max-width:390px){
+  .hero h1{font-size:15.7vw!important}
+  .actions{grid-template-columns:1fr!important}
+  .arun-framework{grid-template-columns:1fr!important}
+}
+</style>
+
+</head>
+<body>
+<header>
+ <nav class="shell">
+  <a class="brand" href="#home"><span class="logoBox"><img src="cwf-logo.png" alt="Cancer Warrior Fitness logo"></span><span><b>CANCER WARRIOR FITNESS</b><small>COACH ARUN ROSIAH</small></span></a>
+  <div class="links"><a href="#about">About</a><a href="#training">What We Do</a><a href="#story">Arun's Story</a><a href="#media">Media</a></div>
+  <div class="themes" aria-label="Choose website colour">
+<button type="button" class="dot active" style="--swatch:#2f8f3a" data-a="#2f8f3a" data-b="#176b2b" data-rgb="47,143,58" title="Green" aria-label="Green"></button>
+<button type="button" class="dot" style="--swatch:#d9343a" data-a="#d9343a" data-b="#a71920" data-rgb="217,52,58" title="Red" aria-label="Red"></button>
+<button type="button" class="dot" style="--swatch:#e68121" data-a="#e68121" data-b="#b85a0a" data-rgb="230,129,33" title="Orange" aria-label="Orange"></button>
+<button type="button" class="dot" style="--swatch:#287acb" data-a="#287acb" data-b="#155695" data-rgb="40,122,203" title="Blue" aria-label="Blue"></button>
+<button type="button" class="dot" style="--swatch:#8050c9" data-a="#8050c9" data-b="#5930a0" data-rgb="128,80,201" title="Purple" aria-label="Purple"></button>
+<button type="button" class="dot" style="--swatch:#d2a514" data-a="#d2a514" data-b="#9c7600" data-rgb="210,165,20" title="Yellow" aria-label="Yellow"></button>
+<button type="button" class="dot" style="--swatch:#df4f8f" data-a="#df4f8f" data-b="#b72c69" data-rgb="223,79,143" title="Pink" aria-label="Pink"></button>
+<button type="button" class="dot" style="--swatch:#171717" data-a="#171717" data-b="#000000" data-rgb="23,23,23" title="Black" aria-label="Black"></button>
+</div>
+  <a class="cta" href="#contact">Train With Arun</a>
+ </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <img class="heroLogo" src="cwf-logo.png" alt="Cancer Warrior Fitness logo">
+ <div class="heroInner shell">
+  <div class="heroText">
+   <div class="eyebrow">COACH • EDUCATOR • FUNCTIONAL FITNESS SPECIALIST</div>
+   <h1>STRONGER.<br><span class="accent">BRIGHTER.</span><br>FOR LIFE.</h1>
+   <p class="lead">Personal training built around strength, mobility, confidence and sustainable fitness — with Coach Arun Rosiah.</p>
+   <div class="actions"><a class="btn primary" href="#contact">TRAIN WITH ARUN →</a><a class="btn secondary" href="#story">MEET ARUN</a></div>
+  </div>
+  <div class="photoWrap"><img src="arun-hero.png" alt="Coach Arun Rosiah"></div>
+ </div>
+ <div class="stats shell"><span><strong>30+ YEARS</strong>Physical Education experience</span><span><strong>10+ YEARS</strong>Freelance personal training</span><span><strong>ACE</strong>Certified Personal Trainer</span></div>
+</section>
+
+<section id="about"><div class="shell">
+ <div class="sectionTag">Cancer Warrior Fitness</div>
+ <h2>Fitness should help you <span style="color:var(--accent)">live better.</span></h2>
+ <p class="sub">Coach Arun's approach brings together decades of education, coaching and functional fitness experience. The focus is practical: become stronger, move with confidence, improve mobility and build fitness that supports everyday life.</p>
+<div class="arun-framework" aria-label="ARUN training philosophy">
+  <div><strong>A.</strong><span>Adapt</span></div>
+  <div><strong>R.</strong><span>Realign</span></div>
+  <div><strong>U.</strong><span>Uplift</span></div>
+  <div><strong>N.</strong><span>Navigate</span></div>
+</div>
+</div></section>
+
+<section id="training"><div class="shell">
+ <div class="sectionTag">What We Do</div><h2>Built for <span style="color:var(--accent)">real life.</span></h2>
+ <div class="cards services-three">
+<article class="card"><div class="num">01</div><h3>1-to-1 PT Sessions</h3><p>Personalised coaching focused on your goals, movement, strength and performance.</p></article>
+<article class="card"><div class="num">02</div><h3>Corporate Team Building &amp; Bonding Games</h3><p>Engaging team experiences designed to build connection, participation and energy.</p></article>
+<article class="card"><div class="num">03</div><h3>Fitness, Wellness &amp; Motivational Talks</h3><p>Practical and motivating sessions around fitness, wellness, resilience and lifelong performance.</p></article>
+</div>
+</div></section>
+
+<div class="impact-strip"><span>IMPROVING RESILIENCE</span><i>•</i><span>IMPROVING PERFORMANCE</span><i>•</i><span>IMPROVING LONGEVITY</span></div>
+<section id="story"><div class="shell story">
+ <div class="storyPic"><img src="arun-story.png" alt="Arun Rosiah"></div>
+ <div>
+  <div class="sectionTag">The Cancer Warrior Story</div>
+  <h2>Strength means more than <span style="color:var(--accent)">muscle.</span></h2>
+  <p class="quote">“A coach, educator and cancer warrior helping people build <em>strength for life.</em>”</p>
+  <p class="sub">Arun's own journey through Stage 3 colorectal cancer shaped his relationship with health, movement and ageing. Today, that lived experience sits alongside decades in physical education and personal training — forming the philosophy behind Cancer Warrior Fitness.</p>
+  <div class="badges"><span class="badge ace-badge">
+<img src="ace-certified.png" alt="ACE Certified Personal Trainer badge">
+<span>ACE Certified Personal Trainer</span>
+</span><span class="badge">Senior Fitness Specialist</span><span class="badge">Master Functional Trainer</span><span class="badge">Prenatal & Postpartum Exercise Trainer</span></div>
+ </div>
+</div></section>
+
+<section id="media"><div class="shell">
+ <div class="sectionTag">Recognition & Story</div><h2>A journey that goes <span style="color:var(--accent)">beyond the gym.</span></h2>
+ <p class="sub">Arun's fitness, cancer-survivorship and healthy-ageing journey has been featured by Singapore media and healthcare organisations.</p>
+ <div class="mediaRow">
+<a class="media" href="https://vogue.sg/arun-rosiah-vogue-man/" target="_blank" rel="noopener">VOGUE SINGAPORE <span>↗</span></a>
+<a class="media" href="https://www.straitstimes.com/life/life-can-still-be-beautiful-cancer-survivors-model-for-charity" target="_blank" rel="noopener">THE STRAITS TIMES <span>↗</span></a>
+<a class="media" href="https://www.ncis.com.sg/ncis-patient-stories/issue-19-fit-and-fab" target="_blank" rel="noopener">NCIS <span>↗</span></a>
+<a class="media" href="https://www.beritaharian.sg/mata-mata/3060249/usai-solat-jumaat-jemaah-masjid-yusof-ishak-luang-15-minit-kekal-cergas" target="_blank" rel="noopener">BERITA HARIAN <span>↗</span></a>
+</div>
+</div></section>
+
+<section class="contact" id="contact"><div class="shell">
+ <div class="sectionTag">Start A Conversation</div>
+ <h2>Ready to get <span style="color:var(--accent)">stronger?</span></h2>
+ <p class="sub">Talk to Coach Arun about your goals and find an approach that works for you.</p><p class="moment-line">Get You Ready for Moments.<br><strong>Anytime, Anywhere — In Work, Sports &amp; Life.</strong></p>
+ <div class="contactBox">
+  <div class="details"><b>Arun Rosiah</b><br>+65 9856 6597<br>primalquest28@gmail.com<br><span class="instagram-icon" aria-hidden="true">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+<rect x="3" y="3" width="18" height="18" rx="5"></rect>
+<circle cx="12" cy="12" r="4"></circle>
+<circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle>
+</svg>
+</span> cancerwarriorfitnesssg<br>Islandwide, Singapore</div>
+  <a class="btn primary" href="https://wa.me/6598566597" target="_blank" rel="noopener">WHATSAPP COACH ARUN →</a>
+ </div>
+</div></section>
+</main>
+
+<footer><span>© Cancer Warrior Fitness • UEN 53471641E</span><span>GET YOU READY FOR MOMENTS. ANYTIME, ANYWHERE — IN WORK, SPORTS & LIFE.</span></footer>
+
+<script>
+document.querySelectorAll('.dot').forEach(dot=>{
+ dot.addEventListener('click',()=>{
+  document.documentElement.style.setProperty('--accent',dot.dataset.a);
+  document.documentElement.style.setProperty('--accent2',dot.dataset.b);
+  document.documentElement.style.setProperty('--rgb',dot.dataset.rgb);
+  document.querySelectorAll('.dot').forEach(d=>d.classList.remove('active'));
+  dot.classList.add('active');
+ });
+});
+</script>
+
+<style id="interaction-fixes">
+.media{text-decoration:none!important;cursor:pointer!important;transition:.2s!important}
+.media:hover{transform:translateY(-3px);border-color:var(--accent)!important;color:var(--accent2)!important}
+.media span{margin-left:8px}
+.themes{position:relative;z-index:100;pointer-events:auto!important}
+.dot{appearance:none;-webkit-appearance:none;padding:0!important;position:relative;z-index:101;pointer-events:auto!important}
+.dot:hover{transform:scale(1.12)}
+</style>
+
+
+
+<script id="final-theme-js">
+document.addEventListener('DOMContentLoaded', function () {
+  const root = document.documentElement;
+  const dots = Array.from(document.querySelectorAll('.themes .dot'));
+
+  function applyTheme(dot) {
+    root.style.setProperty('--accent', dot.dataset.a, 'important');
+    root.style.setProperty('--accent2', dot.dataset.b, 'important');
+    root.style.setProperty('--rgb', dot.dataset.rgb, 'important');
+    dots.forEach(d => d.classList.toggle('active', d === dot));
+    try { sessionStorage.setItem('cwfTheme', dot.title); } catch(e) {}
+  }
+
+  dots.forEach(dot => dot.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    applyTheme(dot);
+  }));
+
+  try {
+    const saved = sessionStorage.getItem('cwfTheme');
+    const found = dots.find(d => d.title === saved);
+    if (found) applyTheme(found);
+  } catch(e) {}
+});
+</script>
+
+</body></html>
